@@ -31,3 +31,27 @@
   - 다른 스토리지 플랫폼과 구별되는 가장 큰 차이점이 있다. server-side cursor를 유지하지 않는다는 것이다. 보통 스토리지 플랫폼에서 많은 양의 데이터를 조회하기 위해 조회시 cursor를 반환해서 다음 요청시 cursor가 가리키는 준비된 데이터의 다음을 읽게하지만 ES는 그렇지 않고 rest API의 특성인 stateless로 완전히 응답시 모든 상태를 끊는다
 
 #### [Query language(Query DSL)](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-query-lang.html)
+  - `mill` 과 `lane`이 둘 중에 하나라도 들어있는것을 찾는다
+    ```zsh
+    curl -X GET "localhost:9200/bank/_search" -H 'Content-Type: application/json' -d'
+    {
+      "query": { "match": { "address": "mill lane" } }
+    }
+    '
+    ```
+  - `mill`과 `lane`이 둘 다 들어있는(AND)로 검색할려면 bool query로 요청해야 한다
+    ```zsh
+    curl -X GET "localhost:9200/bank/_search" -H 'Content-Type: application/json' -d'
+    {
+      "query": {
+        "bool": {
+          "must": [
+            { "match": { "address": "mill" } },
+            { "match": { "address": "lane" } }
+          ]
+        }
+      }
+    }
+    '
+    ```
+  
