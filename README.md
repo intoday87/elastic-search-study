@@ -1,4 +1,4 @@
-# elastic-search-study
+# elastic-search-study (ES)
 
 ## installation
 - cluster에서 여러 node로 운영을 해보기 위해서 docker로 띄움 - [link](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
@@ -24,3 +24,7 @@
 - batch processing
   - [bulk insert를 이용](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-batch-processing.html)
   - 순차 처리돠다가 실패한 건은 오류로 처리하고 다음것으로 넘어간다
+  
+- search API - [link](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-search-API.html)
+  - 같은 Endpoint에 query param 또는 GET에 본문(body)에 json을 실어서 동일하게 검색할 수 있다. 다만 파라미터 이름은 길이를 위해 차이가 있다. ex_) `q=*` => `{ query: { match_all: {} } } `
+  - 다른 스토리지 플랫폼과 구별되는 가장 큰 차이점이 있다. server-side cursor를 유지하지 않는다는 것이다. 보통 스토리지 플랫폼에서 많은 양의 데이터를 조회하기 위해 조회시 cursor를 반환해서 다음 요청시 cursor가 가리키는 준비된 데이터의 다음을 읽게하지만 ES는 그렇지 않고 rest API의 특성인 stateless로 완전히 응답시 모든 상태를 끊는다
