@@ -20,3 +20,7 @@
     - create doc `curl -XPUT 'localhost:9200/customer/_doc/1?pretty' -H 'Content-Type:application/json;charset=utf8' -d '{ "name": "nick wilde" }'
     - delete doc 'curl -XDELETE 'localhost:9200/customer/_doc/1'
     - bulk 인서트나 스크립트를 이용한 수정도 가능한데 POST를 이용해서 가능하다 `curl -XPOST 'localhost:9200/customer/_update/1' ...` [link](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-update-documents.html)
+
+- batch processing
+  - [bulk insert를 이용](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-batch-processing.html)
+  - 순차 처리돠다가 실패한 건은 오류로 처리하고 다음것으로 넘어간다
