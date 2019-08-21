@@ -74,3 +74,9 @@ eee# Elastic-search-study (ES)
 - 응답
   - 기본으로 검색은 절대 타임아웃이 되지 않지만 `timeout`파라미터로 한계를 명시할 수 있다
   - 검색이 타임아웃되면 `timed_out`값은 `true`이고 타임아웃될 때까지의 결과만 얻는다
+- 히트 통계
+  - 기본적으로 점수 알고리즘은 `TF-IDF(term frequency-inverse document frequency)`
+    - 단어 빈도(term frequency)는 검색한 텀(단어)에 대해 그 텀이 더 발생하면 문서의 점수가 증가한다
+    - inverse document frequency는 텀이 전체 문서에 적게 발생하면 점수가 증가한다 -> 좀 더 관련이 있다고 생각
+    - 6장에서 자세히 다룬다
+    
