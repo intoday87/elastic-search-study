@@ -1,4 +1,4 @@
-# Elastic-search-study (ES)
+eee# Elastic-search-study (ES)
 
 ## [Installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 - cluster에서 여러 node로 운영을 해보기 위해서 docker로 띄움
@@ -70,3 +70,6 @@
 - 기존 다른 스토리지와 연동할 수 있는 플러그인이 대부분 제공된다 - 데이터 삽입시는 트랜잭션이 지원되는 관계형 DB에 색인은 동기화 플러그인 또는 작성된 서비스로부터 elasticsearch에 색인되는 형태
 - 데이터를 레코드나 행으로 저장하는 관계형 데이터베이스와 다르게 엘라스틱서치는 데이터를 문서 단위로 저장한다
   - 데이터가 테이블이나 엔티티 단위로 정규화되어 있지 않고 하나의 문서가 저장되어 있다보니 조인 연산같은게 필요 없어서 검색이 빠르다
+#### 기능 들여다 보기
+- 응답
+  - 기본으로 검색은 절대 타임아웃이 되지 않지만 `timeout`파라미터로 한계를 명시할 수 있다
