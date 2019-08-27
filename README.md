@@ -1,4 +1,4 @@
-eee# Elastic-search-study (ES)
+# Elastic-search-study (ES)
 
 ## [Installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 - cluster에서 여러 node로 운영을 해보기 위해서 docker로 띄움
@@ -79,4 +79,6 @@ eee# Elastic-search-study (ES)
     - 단어 빈도(term frequency)는 검색한 텀(단어)에 대해 그 텀이 더 발생하면 문서의 점수가 증가한다
     - inverse document frequency는 텀이 전체 문서에 적게 발생하면 점수가 증가한다 -> 좀 더 관련이 있다고 생각
     - 6장에서 자세히 다룬다
-    
+- [5 >= version 부터 인덱스별 개별 매핑을 지원하지 않는다](https://stackoverflow.com/questions/55857956/types-cannot-be-provided-in-put-mapping-requests-unless-the-include-type-name-p)
+  - 모든 인덱스는 매핑을 공유한다
+- [string 매핑 타입이 없어지고 text](https://stackoverflow.com/questions/47452770/no-handler-for-type-string-declared-on-field-name)
