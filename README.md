@@ -82,3 +82,25 @@
 - [5 >= version 부터 인덱스별 개별 매핑을 지원하지 않는다](https://stackoverflow.com/questions/55857956/types-cannot-be-provided-in-put-mapping-requests-unless-the-include-type-name-p)
   - 모든 인덱스는 매핑을 공유한다
 - [string 매핑 타입이 없어지고 text](https://stackoverflow.com/questions/47452770/no-handler-for-type-string-declared-on-field-name)
+- 생성된 매핑 타입은 수정할 수 없다
+  -  `host` 매핑이 이미 `text`타입으로 존재하는 경우 매핑 타입을 변경하려고 시도할 때
+    `curl -XPUT 'localhost:9200/get-together/_mapping/new-events?pretty' -H 'Content-Type:application/json' -d '{ "host": { "type": "keyword" } }'`
+    ```json
+    {
+      "error" : {
+        "root_cause" : [
+          {
+            "type" : "illegal_argument_exception",
+            "reason" : "mapper [host] of different type, current_type [text], merged_type [keyword]"
+          }
+        ],
+        "type" : "illegal_argument_exception",
+        "reason" : "mapper [host] of different type, current_type [text], merged_type [keyword]"
+      },
+      "status" : 400
+    }
+    ```
+  - 이 오류를 우회하는 유일한 방법은 다음 절차로 new-events의 모든 데이터를 다시 색인하는 것이다
+    1. new-events 타입의 데이터를 모드 삭제 -> 데이터 삭제는 현재 매핑도 함께 삭제한다
+    2. 새 매핑을 입력한다
+    3. 데이터 전체를 다시 색인한다
