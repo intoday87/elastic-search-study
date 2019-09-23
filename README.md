@@ -1,5 +1,9 @@
 # Elastic-search-study (ES)
-
+- 실시간에 준하는 검색을 제공한다(사실 반영되는데 최대 1초 걸림)
+- apache [lucene](https://lucene.apache.org/core/index.html)을 기반으로 만들어짐
+- 주로 JSON 형태의 도큐먼트 형태로 저장한다(schema-less), 하지만 JSON이 아니여도 되는듯
+  - 인덱스가 있음에도 불구하고
+- cluster 구성, 여러 어떤 노드로 조회하든 데이터가 조회 가능하다. 노드에서 노드간 검색을 통해 가능
 ## [Installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 - cluster에서 여러 node로 운영을 해보기 위해서 docker로 띄움
 
