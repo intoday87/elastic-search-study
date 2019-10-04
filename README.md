@@ -1,5 +1,5 @@
 # Elastic-search-study (ES)
-## Introduction
+## [Introduction](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/elasticsearch-intro.html)
 - 실시간에 준하는 검색을 제공한다(사실 반영되는데 최대 1초 걸림)
 - apache [lucene](https://lucene.apache.org/core/index.html)을 기반으로 만들어짐
 - 구조화된 데이터는 JSON으로 직렬화 해서 도큐먼트 단위로 저장하고 JSON 필드를 기준으로 인덱싱을 한다
