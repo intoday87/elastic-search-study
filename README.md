@@ -10,6 +10,9 @@
   - dynamic mapping이 활성화되면 새로 추가된 필드에 대해서 자동으로 인덱스에 추가한다
     - 물론 rule을 정의해서 사용자가 dynamic mapping을 제어할 수 있다 -> 같은 필드라도 다른 방식으로 인덱싱이 가능하다
 - REST API 형식으로 클러스터에 대한 조작 및 도큐먼드 CRUD등 대부분을 제어할 수 있다
+  - JSON 형식의 [Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html) 제공
+  - SQL 형식의 Query도 제공하는데 필요성을 못느끼겠음
+- Aggregation으로 결과에 대한 요약을 가공할 수 있다
 ## [Installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 - cluster에서 여러 node로 운영을 해보기 위해서 docker로 띄움
 
