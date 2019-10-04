@@ -5,6 +5,8 @@
 - 구조화된 데이터는 JSON으로 직렬화 해서 도큐먼트 단위로 저장하고 JSON 필드를 기준으로 인덱싱을 한다
 - cluster 구성, 여러 어떤 노드로 조회하든 데이터가 조회 가능하다. 노드에서 노드간 검색을 통해 가능
 - 다른 저장소의 인덱스와 달리 역색인을 제공한다. 태그를 하나 검색했다면, 태그가 검색된 도큐먼트에 색인된 다른 태그들을 바로 참조할 수 있다 
+- 구조화된 데이터(JSON)의 모든 필드를 색인한다
+- 색인하는 구조화된 데이터는 schema-less
 ## [Installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 - cluster에서 여러 node로 운영을 해보기 위해서 docker로 띄움
 
