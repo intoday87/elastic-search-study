@@ -4,6 +4,7 @@
 - apache [lucene](https://lucene.apache.org/core/index.html)을 기반으로 만들어짐
 - 구조화된 데이터는 JSON으로 직렬화 해서 도큐먼트 단위로 저장하고 JSON 필드를 기준으로 인덱싱을 한다
 - cluster 구성, 여러 어떤 노드로 조회하든 데이터가 조회 가능하다. 노드에서 노드간 검색을 통해 가능
+- 다른 저장소의 인덱스와 달리 역색인을 제공한다. 태그를 하나 검색했다면, 검색한 태그 색인 리스트를 바로 참고할 수 있다
 ## [Installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 - cluster에서 여러 node로 운영을 해보기 위해서 docker로 띄움
 
