@@ -7,6 +7,8 @@
 - 다른 저장소의 인덱스와 달리 역색인을 제공한다. 태그를 하나 검색했다면, 태그가 검색된 도큐먼트에 색인된 다른 태그들을 바로 참조할 수 있다 
 - 구조화된 데이터(JSON)의 모든 필드를 색인한다
 - 색인하는 구조화된 데이터는 schema-less
+  - dynamic mapping이 활성화되면 새로 추가된 필드에 대해서 자동으로 인덱스에 추가한다
+    - 물론 rule을 정의해서 사용자가 dynamic mapping을 제어할 수 있다 -> 같은 필드라도 다른 방식으로 인덱싱이 가능하다
 ## [Installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 - cluster에서 여러 node로 운영을 해보기 위해서 docker로 띄움
 
